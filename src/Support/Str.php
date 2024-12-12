@@ -102,6 +102,14 @@ final class Str
     }
 
     /**
+     * Determine if a given value is a valid ULID.
+     */
+    public static function isUlid(string $value): bool
+    {
+        return preg_match('/^[0-7][0-9A-HJKMNP-TV-Z]{25}$/iD', $value) > 0;
+    }
+
+    /**
      * Creates a describe block as `$describeDescription` → `$testDescription` format.
      *
      * @param  array<int, string>  $describeDescriptions
